@@ -1,14 +1,8 @@
 $(document).on('ready', function() {
-
-
-
-$("form").on("submit",function(event) {
+  $("form").on("submit", function(event) {
     event.preventDefault();
-
     getResults();
-    // console.log(my_city);
   });
-
   var getResults = function() {
     var my_city = $("#search-term").val().trim();
     var num_of_days = 1;
@@ -25,11 +19,9 @@ $("form").on("submit",function(event) {
       dataType: "json",
     });
     request.done(function(apiResponse) {
-      console.log(apiResponse.data.current_condition[0].temp_F);
-      // temperature = apiResponse.data.current_condition[0].temp_F;
-      // $(".temp").html(temperature + " degrees in Fahrenheit in " + my_city);
-      // $(".Location").html(my_city);
+      temperature = apiResponse.data.current_condition[0].temp_F;
+      $(".temp").html(temperature + " degrees in Fahrenheit in " + my_city);
+      $(".Location").html(my_city);
     });
   };
-
 });
