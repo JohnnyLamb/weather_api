@@ -22,6 +22,7 @@ $(document).on('ready', function() {
       temperature = apiResponse.data.current_condition[0].temp_F;
       $(".temp").html(temperature + " degrees in Fahrenheit in " + my_city);
       $(".Location").html(my_city);
+      $("body").css("background-color", "yellow");
     });
   };
 });
